@@ -1,0 +1,13 @@
+[package]
+name = "my-send-grid"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+
+flurl = { tag = "0.6.1", git = "https://github.com/MyJetTools/fl-url.git" }
+rust-extensions = { tag = "0.1.5", git = "https://github.com/MyJetTools/rust-extensions.git", features = [
+    "base64",
+] }
