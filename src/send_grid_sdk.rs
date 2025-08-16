@@ -1,4 +1,4 @@
-use flurl::FlUrl;
+use flurl::{FlUrl, body::FlUrlBody};
 use rust_extensions::{StrOrString, base64::IntoBase64};
 
 use super::models::*;
@@ -225,7 +225,7 @@ impl SendGrid {
             .append_path_segment("mail")
             .append_path_segment("send")
             .with_header("Authorization", format!("Bearer {}", self.api_key.as_str()))
-            .post(&json_model)
+            .post(FlUrlBody::as_json(&json_model))
             .await
             .unwrap();
 
